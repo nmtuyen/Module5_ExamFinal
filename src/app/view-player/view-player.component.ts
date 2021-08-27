@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
+import {PlayerService} from '../service/player.service';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-view-player',
@@ -12,27 +14,27 @@ export class ViewPlayerComponent implements OnInit {
     name: new FormControl(),
     champ: new FormControl(),
     kda: new FormControl(),
-    description: new FormControl()
+    des: new FormControl()
   });
   id = 0;
 
-  constructor(private bookService: BookService,
+  constructor(private playerService: PlayerService,
               private activatedRoute: ActivatedRoute,
-              private router: Router) { }
+  ) { }
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe( paramMap => {
       // @ts-ignore
-      this.id = +paramMap.get('id');
+      this.id = paramMap.get('id');
       console.log(this.id);
-      this.getBookById(this.id);
+      this.getById(this.id);
     });
   }
   // tslint:disable-next-line:typedef
-  getBookById(id: number) {
+  getById(id: number) {
     console.log(id);
-    this.bookService.getById(id).subscribe(book => {
-      this.book.patchValue(book);
+    this.playerService.getById(id).subscribe(player => {
+      this.player.patchValue(player);
     });
   }
 
