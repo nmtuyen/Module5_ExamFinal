@@ -1,0 +1,24 @@
+<form [formGroup]="player" (ngSubmit)="onSubmit(id)">
+  <table>
+    <tr>
+      <td>NAme</td>
+      <td><input type="text" formControlName="name"></td>
+    </tr>
+    <tr>
+      <td>Champ</td>
+      <td><input type="text" formControlName="champ"></td>
+    </tr>
+    <tr>
+      <td>KDA</td>
+      <td><input type="text" formControlName="kda"></td>
+    </tr>
+    <tr>
+      <td>Description</td>
+      <td><input type="text" formControlName="des"></td>
+    </tr>
+    <tr>
+      <td><button>Update</button></td>
+      <td><a routerLink="/players/list">Thoát</a></td>
+    </tr>
+  </table>
+</form>

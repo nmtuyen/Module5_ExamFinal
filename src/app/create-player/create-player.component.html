@@ -1,0 +1,22 @@
+<h3>Add a book</h3>
+<form [formGroup]="playerForm" (ngSubmit)="onSubmit()">
+  <table>
+    <tr>
+      <td>Name</td>
+      <td><input type="text" formControlName="name"></td>
+    </tr>
+    <tr>
+      <td>Champ</td>
+      <td><input type="text" formControlName="champ"></td>
+    </tr>
+    <tr>
+      <td>KDA</td>
+      <td><input type="text" formControlName="kda"></td>
+    </tr>
+    <tr>
+      <td>Description</td>
+      <td><input type="text" formControlName="des"></td>
+    </tr>
+    <button>Add</button>
+  </table>
+</form>

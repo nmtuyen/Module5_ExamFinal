@@ -1,0 +1,19 @@
+<h3>List book</h3>
+<table>
+  <tr>
+    <td>Có {{players.length}} người chơi</td>
+    <td><a routerLink="/players/create">Thêm mới người chơi</a></td>
+  </tr>
+  <tr>
+    <td>Name</td>
+    <td>Champ</td>
+    <td>Edit</td>
+    <td>Delete</td>
+  </tr>
+  <tr *ngFor="let player of players">
+    <td><a [routerLink]="['/books/view',player.id]">{{player.name}}</a></td>
+    <td>{{player.champ}}</td>
+    <td><a [routerLink]="['/players/edit',player.id]">edit</a></td>
+    <td><a [routerLink]="['/players/delete',player.id]">delete</a></td>
+  </tr>
+</table>

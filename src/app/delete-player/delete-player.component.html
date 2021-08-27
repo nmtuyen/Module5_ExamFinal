@@ -1,0 +1,28 @@
+<form [formGroup]="player" (ngSubmit)="onSubmit(id)">
+  <table>
+    <!--    <tr>-->
+    <!--      <td>Id</td>-->
+    <!--      <td><input type="text" formControlName="id" style="display: none"></td>-->
+    <!--    </tr>-->
+    <tr>
+      <td>Name</td>
+      <td><p>{{player.value.name}}</p></td>
+    </tr>
+    <tr>
+      <td>Champ</td>
+      <td>{{player.value.champ}}</td>
+    </tr>
+    <tr>
+      <td>KDA</td>
+      <td>{{player.value.kda}}</td>
+    </tr>
+    <tr>
+      <td>Description</td>
+      <td>{{player.value.des}}</td>
+    </tr>
+    <tr>
+      <td><button>Delete</button></td>
+      <td><a routerLink="/players/list">Thoát</a></td>
+    </tr>
+  </table>
+</form>
